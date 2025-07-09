@@ -27,22 +27,22 @@ const Add = (props) => {
 
     // -----------  validationSchema
     const validationSchema = yup.object({
-        policyType: yup.string().required("Policy Type is required"),
-        policyStartDate: yup.date().required("Policy Start Date is required"),
-        policyEndDate: yup.date().required("Policy End Date is required"),
-        policyStatus: yup.string().required("Policy Status is required"),
-        coverageAmounts: yup.number().required("Coverage Amounts is required"),
-        deductibles: yup.number().required("Deductions is required"),
-        limits: yup.number().required("Limits is required"),
-        insuredPersonName: yup.string().required("Person Name is required"),
-        insuredPersonDateOfBirth: yup.date().required("Date of Birth is required"),
-        relationshipToTheInsured: yup.string().required("Relationship To The Insured is required"),
-        phoneNumber: yup.string().matches(/^[0-9]{10}$/, 'Phone number is invalid').required('Phone number is required'),
-        emailAddress: yup.string().email('Invalid email').required("Email is required"),
-        additionalPhoneNumber: yup.string().matches(/^[0-9]{10}$/, 'Phone number is invalid'),
-        additionalEmailAddress: yup.string().email('Invalid email'),
-        underwriterPhone: yup.string().matches(/^[0-9]{10}$/, 'Phone number is invalid'),
-        underwriterEmail: yup.string().email('Invalid email')
+        policyType: yup.string().required("El tipo de póliza es requerido"),
+        policyStartDate: yup.date().required("La fecha de inicio de la póliza es requerida"),
+        policyEndDate: yup.date().required("La fecha de fin de la póliza es requerida"),
+        policyStatus: yup.string().required("El estado de la póliza es requerido"),
+        coverageAmounts: yup.number().required("Los montos de cobertura son requeridos"),
+        deductibles: yup.number().required("Los deducibles son requeridos"),
+        limits: yup.number().required("Los límites son requeridos"),
+        insuredPersonName: yup.string().required("El nombre de la persona es requerido"),
+        insuredPersonDateOfBirth: yup.date().required("La fecha de nacimiento es requerida"),
+        relationshipToTheInsured: yup.string().required("La relación con el asegurado es requerida"),
+        phoneNumber: yup.string().matches(/^[0-9]{10}$/, 'El número de teléfono es inválido').required('El número de teléfono es requerido'),
+        emailAddress: yup.string().email('Email inválido').required("El email es requerido"),
+        additionalPhoneNumber: yup.string().matches(/^[0-9]{10}$/, 'El número de teléfono es inválido'),
+        additionalEmailAddress: yup.string().email('Email inválido'),
+        underwriterPhone: yup.string().matches(/^[0-9]{10}$/, 'El número de teléfono es inválido'),
+        underwriterEmail: yup.string().email('Email inválido')
     });
 
     // -----------   initialValues
@@ -128,7 +128,7 @@ const Add = (props) => {
                         // color: "white",
                     }}
                 >
-                    <Typography variant="h6">Add New </Typography>
+                    <Typography variant="h6">Agregar Nuevo </Typography>
                     <Typography>
                         <ClearIcon
                             onClick={handleClose}
@@ -143,7 +143,7 @@ const Add = (props) => {
                             tabIndex={-1}
                         >
                             <Typography style={{ marginBottom: "15px" }} variant="h6">
-                                Policy Details
+                                Detalles de la Póliza
                             </Typography>
                             <Grid
                                 container
@@ -152,7 +152,7 @@ const Add = (props) => {
                             >
                                 <Grid item xs={12} sm={6} md={6}>
                                     <FormControl fullWidth>
-                                        <FormLabel>Policy type</FormLabel>
+                                        <FormLabel>Tipo de póliza</FormLabel>
                                         <Select
                                             labelId="demo-simple-select-label"
                                             id="policyType"
@@ -169,16 +169,16 @@ const Add = (props) => {
                                                 formik.touched.policyType && formik.errors.policyType
                                             }
                                         >
-                                            <MenuItem value="Auto Insurance">Auto Insurance</MenuItem>
-                                            <MenuItem value="Health Insurance">Health Insurance </MenuItem>
-                                            <MenuItem value="Home Insurance">Home Insurance </MenuItem>
-                                            <MenuItem value="Life Insurance">Life Insurance </MenuItem>
+                                            <MenuItem value="Auto Insurance">Seguro de Auto</MenuItem>
+                                            <MenuItem value="Health Insurance">Seguro de Salud</MenuItem>
+                                            <MenuItem value="Home Insurance">Seguro de Hogar</MenuItem>
+                                            <MenuItem value="Life Insurance">Seguro de Vida</MenuItem>
                                         </Select>
                                         <FormHelperText style={{ color: Palette.error.main }}>{formik.touched.policyType && formik.errors.policyType}</FormHelperText>
                                     </FormControl>
                                 </Grid>
                                 <Grid item xs={12} sm={6} md={6}>
-                                    <FormLabel>Policy Start Date</FormLabel>
+                                    <FormLabel>Fecha de Inicio de la Póliza</FormLabel>
                                     <TextField
                                         name='policyStartDate'
                                         type='date'
@@ -191,7 +191,7 @@ const Add = (props) => {
                                     />
                                 </Grid>
                                 <Grid item xs={12} sm={6} md={6}>
-                                    <FormLabel>Policy End Date</FormLabel>
+                                    <FormLabel>Fecha de Fin de la Póliza</FormLabel>
                                     <TextField
                                         name='policyEndDate'
                                         type='date'
@@ -205,7 +205,7 @@ const Add = (props) => {
                                 </Grid>
                                 <Grid item xs={12} sm={6} md={6}>
                                     <FormControl fullWidth>
-                                        <FormLabel>Policy status</FormLabel>
+                                        <FormLabel>Estado de la póliza</FormLabel>
                                         <Select
                                             labelId="demo-simple-select-label"
                                             id="policyStatus"
@@ -222,9 +222,9 @@ const Add = (props) => {
                                                 formik.touched.policyStatus && formik.errors.policyStatus
                                             }
                                         >
-                                            <MenuItem value="Active">Active</MenuItem>
-                                            <MenuItem value="InActive">InActive </MenuItem>
-                                            <MenuItem value="Canceled">Canceled </MenuItem>
+                                            <MenuItem value="Active">Activa</MenuItem>
+                                            <MenuItem value="InActive">Inactiva</MenuItem>
+                                            <MenuItem value="Canceled">Cancelada</MenuItem>
                                         </Select>
                                         <FormHelperText style={{ color: Palette.error.main }}>{formik.touched.policyStatus && formik.errors.policyStatus}</FormHelperText>
                                     </FormControl>
@@ -242,7 +242,7 @@ const Add = (props) => {
                                 columnSpacing={{ xs: 0, sm: 5, md: 4 }}
                             >
                                 <Grid item xs={12} sm={6} md={6}>
-                                    <FormLabel>Coverage Amounts</FormLabel>
+                                    <FormLabel>Montos de Cobertura</FormLabel>
                                     <TextField
                                         id="coverageAmounts"
                                         name="coverageAmounts"
@@ -261,7 +261,7 @@ const Add = (props) => {
                                     />
                                 </Grid>
                                 <Grid item xs={12} sm={6} md={6}>
-                                    <FormLabel>Deductibles</FormLabel>
+                                    <FormLabel>Deducibles</FormLabel>
                                     <TextField
                                         id="deductibles"
                                         name="deductibles"
@@ -280,7 +280,7 @@ const Add = (props) => {
                                     />
                                 </Grid>
                                 <Grid item xs={12} sm={12} md={12}>
-                                    <FormLabel>Limits</FormLabel>
+                                    <FormLabel>Límites</FormLabel>
                                     <TextField
                                         id="limits"
                                         name="limits"
@@ -311,7 +311,7 @@ const Add = (props) => {
                                 columnSpacing={{ xs: 0, sm: 5, md: 4 }}
                             >
                                 <Grid item xs={12} sm={6} md={6}>
-                                    <FormLabel>Person Name</FormLabel>
+                                    <FormLabel>Nombre de la Persona</FormLabel>
                                     <TextField
                                         name='insuredPersonName'
                                         size='small'
@@ -323,7 +323,7 @@ const Add = (props) => {
                                     />
                                 </Grid>
                                 <Grid item xs={12} sm={6} md={6}>
-                                    <FormLabel>Date Of Birth</FormLabel>
+                                    <FormLabel>Fecha de Nacimiento</FormLabel>
                                     <TextField
                                         name='insuredPersonDateOfBirth'
                                         type='date'
@@ -336,7 +336,7 @@ const Add = (props) => {
                                     />
                                 </Grid>
                                 <Grid item xs={12} sm={12} md={12}>
-                                    <FormLabel>Relationship to the insured</FormLabel>
+                                    <FormLabel>Relación con el asegurado</FormLabel>
                                     <TextField
                                         id="relationshipToTheInsured"
                                         name="relationshipToTheInsured"
@@ -354,7 +354,7 @@ const Add = (props) => {
                                 style={{ marginBottom: "15px", marginTop: "15px" }}
                                 variant="h6"
                             >
-                                Insured person's contact information
+                                Información de contacto de la persona asegurada
                             </Typography>
                             <Grid
                                 container
@@ -362,7 +362,7 @@ const Add = (props) => {
                                 columnSpacing={{ xs: 0, sm: 5, md: 4 }}
                             >
                                 <Grid item xs={12} sm={6} md={6}>
-                                    <FormLabel>Phone Number</FormLabel>
+                                    <FormLabel>Número de Teléfono</FormLabel>
                                     <TextField
                                         id=""
                                         name="phoneNumber"
@@ -376,7 +376,7 @@ const Add = (props) => {
                                     />
                                 </Grid>
                                 <Grid item xs={12} sm={6} md={6}>
-                                    <FormLabel>Email</FormLabel>
+                                    <FormLabel>Correo electrónico</FormLabel>
                                     <TextField
                                         id="emailAddress"
                                         name="emailAddress"
@@ -418,7 +418,7 @@ const Add = (props) => {
                                 style={{ marginBottom: "15px", marginTop: "15px" }}
                                 variant="h6"
                             >
-                                Additional Insured
+                                Asegurado Adicional
                             </Typography>
                             <Grid
                                 container

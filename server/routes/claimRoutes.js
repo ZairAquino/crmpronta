@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import Claims from '../controllers/claims'
-import auth from '../middlewares/auth';
+import Claims from '../controllers/claims.js'
+import auth from '../middlewares/auth.js';
 const router = Router();
 
 router.get('/list', auth,Claims.index)

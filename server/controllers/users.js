@@ -1,6 +1,8 @@
-import User from '../model/User';
+import User from '../model/User.js';
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
+import fs from 'fs'
+import path from 'path'
 
 const index = async (req, res) => {
     let result = await User.find({ deleted: false })
@@ -108,6 +110,59 @@ const login = async (req, res) => {
     }
 }
 
+const updatePhoto = async (req, res) => {
+    try {
+        if (!req.file) {
+            return res.status(400).json({ message: 'No file uploaded' });
+        }
+
+        const userId = req.params.id;
+        const user = await User.findById(userId);
+        
+        if (!user) {
+            // Delete uploaded file if user not found
+            fs.unlinkSync(req.file.path);
+            return res.status(404).json({ message: 'User not found' });
+        }
+
+        // Delete old profile photo if exists
+        if (user.photoURL) {
+            const oldPhotoPath = path.join(process.cwd(), user.photoURL);
+            if (fs.existsSync(oldPhotoPath)) {
+                fs.unlinkSync(oldPhotoPath);
+            }
+        }
+
+        // Update user with new photo URL
+        const photoURL = req.file.path.replace(/\\/g, '/'); // Normalize path separators
+        
+        const updatedUser = await User.findByIdAndUpdate(
+            userId,
+            {
+                photoURL: photoURL,
+                modifiedOn: new Date()
+            },
+            { new: true }
+        );
+
+        res.status(200).json({
+            message: 'Profile photo updated successfully',
+            photoURL: photoURL,
+            user: updatedUser
+        });
+
+    } catch (error) {
+        console.error('Error updating profile photo:', error);
+        
+        // Delete uploaded file on error
+        if (req.file) {
+            fs.unlinkSync(req.file.path);
+        }
+        
+        res.status(500).json({ message: 'Internal server error' });
+    }
+}
 
 
-export default { index, view, edit, deleteData, register, login }
+
+export default { index, view, edit, deleteData, register, login, updatePhoto }

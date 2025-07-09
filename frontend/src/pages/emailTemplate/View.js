@@ -93,7 +93,7 @@ const View = () => {
                     <Grid container display="flex" alignItems="center">
                         <Stack direction="row" alignItems="center" mb={3} justifyContent={"space-between"} width={"100%"}>
                             <Header
-                                title="View & Edit Template"
+                                title="Ver y Editar Plantilla"
                             />
                             <Stack direction="row" alignItems="center" justifyContent={"flex-end"} spacing={2}>
                                 <Button variant="contained" color="secondary" onClick={togglePreview}>{preview ? "Hide Preview" : "Show Preview"}</Button>

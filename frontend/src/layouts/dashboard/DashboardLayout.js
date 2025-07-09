@@ -23,6 +23,7 @@ const Main = styled('div')(({ theme }) => ({
   minHeight: '100%',
   paddingTop: APP_BAR_MOBILE + 24,
   paddingBottom: theme.spacing(10),
+  background: `linear-gradient(135deg, ${theme.palette.primary.lighter}08 0%, ${theme.palette.secondary.lighter}08 100%)`,
   [theme.breakpoints.up('lg')]: {
     paddingTop: APP_BAR_DESKTOP + 24,
     paddingLeft: theme.spacing(2),

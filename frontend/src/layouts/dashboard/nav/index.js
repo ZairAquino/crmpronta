@@ -55,8 +55,19 @@ const navigate = useNavigate()
         '& .simplebar-content': { height: 1, display: 'flex', flexDirection: 'column' },
       }}
     >
-      <Box sx={{ px: 2.5, py: 3, display: 'inline-flex', cursor: "pointer" }} onClick={home}>
-        <img src="/assets/logo prolink.png" width={150}  />
+      <Box sx={{ 
+        px: 2.5, 
+        py: 3, 
+        display: 'inline-flex', 
+        cursor: "pointer",
+        background: 'linear-gradient(135deg, rgba(232, 213, 255, 0.1) 0%, rgba(254, 215, 226, 0.1) 100%)',
+        borderRadius: 1,
+        margin: 1,
+        '&:hover': {
+          background: 'linear-gradient(135deg, rgba(232, 213, 255, 0.2) 0%, rgba(254, 215, 226, 0.2) 100%)',
+        }
+      }} onClick={home}>
+        <img src="/assets/images/Diseño sin título-5.png" width={150}  />
       </Box>
 
       {/* <Box sx={{ mb: 5, mx: 2.5 }}> */}

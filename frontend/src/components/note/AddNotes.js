@@ -21,8 +21,8 @@ const Addnotes = (props) => {
 
     // -----------  validationSchema
     const validationSchema = yup.object({
-        subject: yup.string().required("Subject is required"),
-        note: yup.string().required("Note is required")
+        subject: yup.string().required("El asunto es requerido"),
+        note: yup.string().required("La nota es requerida")
     });
 
     // -----------   initialValues
@@ -73,7 +73,7 @@ const Addnotes = (props) => {
                         // color: "white",
                     }}
                 >
-                    <Typography variant="h6">Create Note </Typography>
+                    <Typography variant="h6">Crear Nota </Typography>
                     <Typography>
                         <ClearIcon
                             onClick={handleClose}
@@ -93,7 +93,7 @@ const Addnotes = (props) => {
                                 columnSpacing={{ xs: 0, sm: 5, md: 4 }}
                             >
                                 <Grid item xs={12} sm={12} md={12}>
-                                    <FormLabel>Subject</FormLabel>
+                                    <FormLabel>Asunto</FormLabel>
                                     <TextField
                                         id="subject"
                                         name="subject"
@@ -113,7 +113,7 @@ const Addnotes = (props) => {
                                 </Grid>
 
                                 <Grid item xs={12} sm={12}>
-                                    <FormLabel>Note</FormLabel>
+                                    <FormLabel>Nota</FormLabel>
                                     <TextField
                                         id="note"
                                         name="note"
@@ -144,7 +144,7 @@ const Addnotes = (props) => {
                         style={{ textTransform: "capitalize" }}
                         color="secondary"
                     >
-                        Save
+                        Guardar
                     </Button>
                     <Button
                         type="reset"
@@ -156,7 +156,7 @@ const Addnotes = (props) => {
                         }}
                         color="error"
                     >
-                        Cancle
+                        Cancelar
                     </Button>
                 </DialogActions>
 

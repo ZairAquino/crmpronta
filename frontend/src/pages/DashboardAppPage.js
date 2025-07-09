@@ -79,7 +79,7 @@ export default function DashboardAppPage() {
 
       <Container maxWidth="xl">
         <Typography variant="h4" sx={{ mb: 5 }}>
-          Hi, Welcome back 
+          Hola, Bienvenido de vuelta 
         </Typography>
 
         <Grid container spacing={3}>
@@ -88,21 +88,21 @@ export default function DashboardAppPage() {
           </Grid>
 
           <Grid item xs={12} sm={6} md={3}>
-            <AppWidgetSummary title="Contacts" total={totalContact} color="info" icon={'fluent:book-contacts-24-filled'} />
+            <AppWidgetSummary title="Contactos" total={totalContact} color="info" icon={'fluent:book-contacts-24-filled'} />
           </Grid>
 
           <Grid item xs={12} sm={6} md={3}>
-            <AppWidgetSummary title="Policies" total={totalPolicy} color="warning" icon={'ic:baseline-policy'} />
+            <AppWidgetSummary title="Pólizas" total={totalPolicy} color="warning" icon={'ic:baseline-policy'} />
           </Grid>
 
           <Grid item xs={12} sm={6} md={3}>
-            <AppWidgetSummary title="Tasks" total={totalEvent} color="error" icon={'mdi:events'} />
+            <AppWidgetSummary title="Tareas" total={totalEvent} color="error" icon={'mdi:events'} />
           </Grid>
 
           <Grid item xs={12} md={6} lg={8}>
             <AppWebsiteVisits
-              title="Website Visits"
-              subheader="(+43%) than last year"
+              title="Visitas al Sitio Web"
+              subheader="(+43%) que el año pasado"
               chartLabels={[
                 '01/01/2003',
                 '02/01/2003',
@@ -118,19 +118,19 @@ export default function DashboardAppPage() {
               ]}
               chartData={[
                 {
-                  name: 'Team A',
+                  name: 'Equipo A',
                   type: 'column',
                   fill: 'solid',
                   data: [23, 11, 22, 27, 13, 22, 37, 21, 44, 22, 30],
                 },
                 {
-                  name: 'Team B',
+                  name: 'Equipo B',
                   type: 'area',
                   fill: 'gradient',
                   data: [44, 55, 41, 67, 22, 43, 21, 41, 56, 27, 43],
                 },
                 {
-                  name: 'Team C',
+                  name: 'Equipo C',
                   type: 'line',
                   fill: 'solid',
                   data: [30, 25, 36, 30, 45, 35, 64, 52, 59, 36, 39],
@@ -141,12 +141,12 @@ export default function DashboardAppPage() {
 
           <Grid item xs={12} md={6} lg={4}>
             <AppCurrentVisits
-              title="Current Visits"
+              title="Visitas Actuales"
               chartData={[
-                { label: 'America', value: 4344 },
+                { label: 'América', value: 4344 },
                 { label: 'Asia', value: 5435 },
-                { label: 'Europe', value: 1443 },
-                { label: 'Africa', value: 4443 },
+                { label: 'Europa', value: 1443 },
+                { label: 'África', value: 4443 },
               ]}
               chartColors={[
                 theme.palette.primary.main,
@@ -159,31 +159,31 @@ export default function DashboardAppPage() {
 
           <Grid item xs={12} md={6} lg={8}>
             <AppConversionRates
-              title="Conversion Rates"
-              subheader="(+43%) than last year"
+              title="Tasas de Conversión"
+              subheader="(+43%) que el año pasado"
               chartData={[
-                { label: 'Italy', value: 400 },
-                { label: 'Japan', value: 430 },
+                { label: 'Italia', value: 400 },
+                { label: 'Japón', value: 430 },
                 { label: 'China', value: 448 },
-                { label: 'Canada', value: 470 },
-                { label: 'France', value: 540 },
-                { label: 'Germany', value: 580 },
-                { label: 'South Korea', value: 690 },
-                { label: 'Netherlands', value: 1100 },
-                { label: 'United States', value: 1200 },
-                { label: 'United Kingdom', value: 1380 },
+                { label: 'Canadá', value: 470 },
+                { label: 'Francia', value: 540 },
+                { label: 'Alemania', value: 580 },
+                { label: 'Corea del Sur', value: 690 },
+                { label: 'Países Bajos', value: 1100 },
+                { label: 'Estados Unidos', value: 1200 },
+                { label: 'Reino Unido', value: 1380 },
               ]}
             />
           </Grid>
 
           <Grid item xs={12} md={6} lg={4}>
             <AppCurrentSubject
-              title="Current Subject"
-              chartLabels={['English', 'History', 'Physics', 'Geography', 'Chinese', 'Math']}
+              title="Materia Actual"
+              chartLabels={['Inglés', 'Historia', 'Física', 'Geografía', 'Chino', 'Matemáticas']}
               chartData={[
-                { name: 'Series 1', data: [80, 50, 30, 40, 100, 20] },
-                { name: 'Series 2', data: [20, 30, 40, 80, 20, 80] },
-                { name: 'Series 3', data: [44, 76, 78, 13, 43, 10] },
+                { name: 'Serie 1', data: [80, 50, 30, 40, 100, 20] },
+                { name: 'Serie 2', data: [20, 30, 40, 80, 20, 80] },
+                { name: 'Serie 3', data: [44, 76, 78, 13, 43, 10] },
               ]}
               chartColors={[...Array(6)].map(() => theme.palette.text.secondary)}
             />
@@ -191,7 +191,7 @@ export default function DashboardAppPage() {
 
           <Grid item xs={12} md={6} lg={8}>
             <AppNewsUpdate
-              title="News Update"
+              title="Actualización de Noticias"
               list={[...Array(5)].map((_, index) => ({
                 id: faker.datatype.uuid(),
                 title: faker.name.jobTitle(),
@@ -204,15 +204,15 @@ export default function DashboardAppPage() {
 
           <Grid item xs={12} md={6} lg={4}>
             <AppOrderTimeline
-              title="Order Timeline"
+              title="Timeline de Órdenes"
               list={[...Array(5)].map((_, index) => ({
                 id: faker.datatype.uuid(),
                 title: [
-                  '1983, orders, $4220',
-                  '12 Invoices have been paid',
-                  'Order #37745 from September',
-                  'New order placed #XF-2356',
-                  'New order placed #XF-2346',
+                  '1983, órdenes, $4220',
+                  '12 Facturas han sido pagadas',
+                  'Órden #37745 de septiembre',
+                  'Nueva orden colocada #XF-2356',
+                  'Nueva orden colocada #XF-2346',
                 ][index],
                 type: `order${index + 1}`,
                 time: faker.date.past(),
@@ -222,10 +222,10 @@ export default function DashboardAppPage() {
 
           <Grid item xs={12} md={6} lg={4}>
             <AppTrafficBySite
-              title="Traffic by Site"
+              title="Tráfico por Sitio"
               list={[
                 {
-                  name: 'FaceBook',
+                  name: 'Facebook',
                   value: 323234,
                   icon: <Iconify icon={'eva:facebook-fill'} color="#1877F2" width={32} />,
                 },
@@ -250,13 +250,13 @@ export default function DashboardAppPage() {
 
           <Grid item xs={12} md={6} lg={8}>
             <AppTasks
-              title="Tasks"
+              title="Tareas"
               list={[
-                { id: '1', label: 'Create FireStone Logo' },
-                { id: '2', label: 'Add SCSS and JS files if required' },
-                { id: '3', label: 'Stakeholder Meeting' },
-                { id: '4', label: 'Scoping & Estimations' },
-                { id: '5', label: 'Sprint Showcase' },
+                { id: '1', label: 'Crear Logo de FireStone' },
+                { id: '2', label: 'Agregar archivos SCSS y JS si son necesarios' },
+                { id: '3', label: 'Reunión con Encargados' },
+                { id: '4', label: 'Alcance y Estimaciones' },
+                { id: '5', label: 'Exposición Sprint' },
               ]}
             />
           </Grid>

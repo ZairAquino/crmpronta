@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import Calls from '../controllers/calls';
-import auth from '../middlewares/auth'
+import Calls from '../controllers/calls.js';
+import auth from '../middlewares/auth.js'
 const router = Router();
 
 router.get('/list',auth, Calls.index)

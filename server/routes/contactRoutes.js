@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import Contact from '../controllers/contact'
-import auth from '../middlewares/auth';
+import Contact from '../controllers/contact.js'
+import auth from '../middlewares/auth.js';
 const router = Router();
 
 router.get('/list', auth,Contact.index)

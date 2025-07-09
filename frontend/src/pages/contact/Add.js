@@ -28,15 +28,15 @@ const Add = (props) => {
 
   // -----------  validationSchema
   const validationSchema = yup.object({
-    firstName: yup.string().required("First Name is required"),
-    lastName: yup.string().required("Last Name is required"),
-    dateOfBirth: yup.date().required("Date of Birth is required"),
-    gender: yup.string().required("Gender is required"),
-    phoneNumber: yup.string().matches(/^[0-9]{10}$/, 'Phone number is invalid').required('Phone number is required'),
-    emailAddress: yup.string().email('Invalid email').required("Email is required"),
-    address: yup.string().required(),
-    alternatePhoneNumber: yup.string().matches(/^[0-9]{10}$/, 'Phone number is invalid'),
-    additionalEmailAddress: yup.string().email('Invalid email')
+    firstName: yup.string().required("El nombre es requerido"),
+    lastName: yup.string().required("El apellido es requerido"),
+    dateOfBirth: yup.date().required("La fecha de nacimiento es requerida"),
+    gender: yup.string().required("El género es requerido"),
+    phoneNumber: yup.string().matches(/^[0-9]{10}$/, 'El número de teléfono es inválido').required('El número de teléfono es requerido'),
+    emailAddress: yup.string().email('Email inválido').required("El email es requerido"),
+    address: yup.string().required("La dirección es requerida"),
+    alternatePhoneNumber: yup.string().matches(/^[0-9]{10}$/, 'El número de teléfono es inválido'),
+    additionalEmailAddress: yup.string().email('Email inválido')
   });
 
   // -----------   initialValues
@@ -99,7 +99,7 @@ const Add = (props) => {
             // color: "white",
           }}
         >
-          <Typography variant="h6">Add New </Typography>
+          <Typography variant="h6">Agregar Nuevo </Typography>
           <Typography>
             <ClearIcon
               onClick={handleClose}
@@ -111,7 +111,7 @@ const Add = (props) => {
         <DialogContent dividers>
           <form>
             <Typography style={{ marginBottom: "15px" }} variant="h6">
-              Basic Information
+              Información Básica
             </Typography>
             <Grid
               container
@@ -119,7 +119,7 @@ const Add = (props) => {
               columnSpacing={{ xs: 0, sm: 5, md: 4 }}
             >
               <Grid item xs={12} sm={6} md={6}>
-                <FormLabel>First name</FormLabel>
+                <FormLabel>Nombre</FormLabel>
                 <TextField
                   id="firstName"
                   name="firstName"
@@ -138,7 +138,7 @@ const Add = (props) => {
                 />
               </Grid>
               <Grid item xs={12} sm={6} md={6}>
-                <FormLabel>Last name</FormLabel>
+                <FormLabel>Apellido</FormLabel>
                 <TextField
                   id="lastName"
                   name="lastName"
@@ -153,7 +153,7 @@ const Add = (props) => {
                 />
               </Grid>
               <Grid item xs={12} sm={6} md={6}>
-                <FormLabel>Date Of Birth</FormLabel>
+                <FormLabel>Fecha de Nacimiento</FormLabel>
                 <TextField
                   name='dateOfBirth'
                   type='date'
@@ -166,7 +166,7 @@ const Add = (props) => {
                 />
               </Grid>
               <Grid item xs={12} sm={6} md={6}>
-                <FormLabel>Phone number</FormLabel>
+                <FormLabel>Número de teléfono</FormLabel>
                 <TextField
                   id="phoneNumber"
                   name="phoneNumber"
@@ -185,7 +185,7 @@ const Add = (props) => {
                 />
               </Grid>
               <Grid item xs={12}>
-                <FormLabel>Email</FormLabel>
+                <FormLabel>Correo electrónico</FormLabel>
                 <TextField
                   id="emailAddress"
                   name="emailAddress"
@@ -204,17 +204,17 @@ const Add = (props) => {
               </Grid>
               <Grid item xs={12} >
                 <FormControl fullWidth>
-                  <FormLabel>Gender</FormLabel>
+                  <FormLabel>Género</FormLabel>
                   <RadioGroup row name="gender" onChange={formik.handleChange} value={formik.values.gender}>
-                    <FormControlLabel value="Male" control={<Radio />} label="Male" />
-                    <FormControlLabel value="Female" control={<Radio />} label="Female" />
-                    <FormControlLabel value="Other" control={<Radio />} label="Other" />
+                    <FormControlLabel value="Male" control={<Radio />} label="Masculino" />
+                    <FormControlLabel value="Female" control={<Radio />} label="Femenino" />
+                    <FormControlLabel value="Other" control={<Radio />} label="Otro" />
                   </RadioGroup>
                   <FormHelperText style={{ color: Palette.error.main }}>{formik.touched.gender && formik.errors.gender}</FormHelperText>
                 </FormControl>
               </Grid>
               <Grid item xs={12} sm={12} md={12}>
-                <FormLabel>Address</FormLabel>
+                <FormLabel>Dirección</FormLabel>
                 <TextField
                   id="address"
                   name="address"
@@ -240,7 +240,7 @@ const Add = (props) => {
               columnSpacing={{ xs: 0, sm: 5, md: 4 }}
             >
               <Grid item xs={12} sm={6} md={6}>
-                <FormLabel>Alternate phone number</FormLabel>
+                <FormLabel>Número de teléfono alternativo</FormLabel>
                 <TextField
                   id="alternatePhoneNumber"
                   name="alternatePhoneNumber"
@@ -254,7 +254,7 @@ const Add = (props) => {
                 />
               </Grid>
               <Grid item xs={12} sm={6} md={6}>
-                <FormLabel>Additional email address</FormLabel>
+                <FormLabel>Dirección de email adicional</FormLabel>
                 <TextField
                   id="additionalEmailAddress"
                   name="additionalEmailAddress"
@@ -268,7 +268,7 @@ const Add = (props) => {
                 />
               </Grid>
               <Grid item xs={12} sm={6} md={6}>
-                <FormLabel>Instagram profile</FormLabel>
+                <FormLabel>Perfil de Instagram</FormLabel>
                 <TextField
                   id="instagramProfile"
                   name="instagramProfile"
@@ -280,7 +280,7 @@ const Add = (props) => {
                 {formik.values.instagramProfile && <a href={`https://www.instagram.com/${formik.values.instagramProfile}`} target="_blank" rel="noreferrer">Link</a>}
               </Grid>
               <Grid item xs={12} sm={6} md={6}>
-                <FormLabel>Twitter profile</FormLabel>
+                <FormLabel>Perfil de Twitter</FormLabel>
                 <TextField
                   id="twitterProfile"
                   name="twitterProfile"
@@ -292,7 +292,7 @@ const Add = (props) => {
                 {formik.values.twitterProfile && <a href={`https://twitter.com/${formik.values.twitterProfile}`} target="_blank" rel="noreferrer">Link</a>}
               </Grid>
               <Grid item xs={12} sm={12}>
-                <FormLabel>Preferred Contact Method</FormLabel>
+                <FormLabel>Método de Contacto Preferido</FormLabel>
                 <TextField
                   id="preferredContactMethod"
                   name="preferredContactMethod"
@@ -314,7 +314,7 @@ const Add = (props) => {
             >
               <Grid item xs={12} sm={6} md={6}>
                 <FormControl fullWidth>
-                  <FormLabel>Referral source</FormLabel>
+                  <FormLabel>Fuente de Referencia</FormLabel>
                   <Select
                     id="referralSource"
                     name="referralSource"
@@ -341,7 +341,7 @@ const Add = (props) => {
                 </FormControl>
               </Grid>
               <Grid item xs={12} sm={6} md={6}>
-                <FormLabel>Referral Contact Name</FormLabel>
+                <FormLabel>Nombre del Contacto de Referencia</FormLabel>
                 <TextField
                   id="referralContactName"
                   name="referralContactName"
@@ -352,7 +352,7 @@ const Add = (props) => {
                 />
               </Grid>
               <Grid item xs={12} sm={6} md={6}>
-                <FormLabel>Relationship To Referrer</FormLabel>
+                <FormLabel>Relación con el Referente</FormLabel>
                 <TextField
                   id="relationshipToReferrer"
                   name="relationshipToReferrer"
@@ -373,7 +373,7 @@ const Add = (props) => {
             >
               <Grid item xs={12} sm={6} md={6}>
                 <FormControl fullWidth>
-                  <FormLabel>Marketing Communications</FormLabel>
+                  <FormLabel>Comunicaciones de Marketing</FormLabel>
                   <Select
                     labelId="demo-simple-select-label"
                     id="preferencesForMarketingCommunications"
@@ -399,7 +399,7 @@ const Add = (props) => {
 
               </Grid>
               <Grid item xs={12} sm={6} md={6}>
-                <FormLabel>Preferred language</FormLabel>
+                <FormLabel>Idioma preferido</FormLabel>
                 <TextField
                   id="preferredLanguage"
                   name="preferredLanguage"
@@ -421,7 +421,7 @@ const Add = (props) => {
             style={{ textTransform: "capitalize" }}
           // startIcon={<FiSave />}
           >
-            Save
+            Guardar
           </Button>
           <Button
             type="reset"
@@ -433,7 +433,7 @@ const Add = (props) => {
               handleClose()
             }}
           >
-            Cancle
+            Cancelar
           </Button>
         </DialogActions>
       </Dialog>

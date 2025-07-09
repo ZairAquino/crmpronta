@@ -69,7 +69,7 @@ const View = () => {
                     <Grid container display="flex" alignItems="center">
                         <Stack direction="row" alignItems="center" mb={3} justifyContent={"space-between"} width={"100%"}>
                             <Header
-                                title="Email Details"
+                                title="Detalles del Email"
                             />
                             <Stack direction="row" alignItems="center" justifyContent={"flex-end"} spacing={2}>
                                 {/* Action Butoon */}

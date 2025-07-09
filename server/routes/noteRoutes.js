@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import Notes from '../controllers/notes'
-import auth from '../middlewares/auth';
+import Notes from '../controllers/notes.js'
+import auth from '../middlewares/auth.js';
 const router = Router();
 
 router.get('/list', auth,Notes.index)

@@ -160,7 +160,7 @@ const AddEvent = ({ open, handleClose, setUserAction, _id }) => {
                                 </Grid>
                                 <Grid item xs={12} sm={6} md={6}>
                                     <FormControl>
-                                        <FormLabel>Related To</FormLabel>
+                                        <FormLabel>Relacionado Con</FormLabel>
                                         <RadioGroup
                                             row
                                             aria-labelledby="demo-row-radio-buttons-group-label"
@@ -170,7 +170,7 @@ const AddEvent = ({ open, handleClose, setUserAction, _id }) => {
                                             onChange={formik.handleChange}
                                         >
                                             <FormControlLabel value="Lead" control={<Radio />} label="Lead" />
-                                            <FormControlLabel value="Contact" control={<Radio />} label="Contact" />
+                                            <FormControlLabel value="Contact" control={<Radio />} label="Contacto" />
                                         </RadioGroup>
                                         <FormHelperText
                                             error={
@@ -182,7 +182,7 @@ const AddEvent = ({ open, handleClose, setUserAction, _id }) => {
                                     </FormControl>
                                 </Grid>
                                 <Grid item xs={12} sm={4}>
-                                    <FormLabel>Status</FormLabel>
+                                    <FormLabel>Estado</FormLabel>
                                     <FormControl fullWidth>
                                         <Select
                                             labelId="demo-simple-select-label"
@@ -194,11 +194,11 @@ const AddEvent = ({ open, handleClose, setUserAction, _id }) => {
                                             onChange={formik.handleChange}
                                             error={formik.touched.status && Boolean(formik.errors.status)}
                                         >
-                                            <MenuItem value="Note Started">Note Started</MenuItem>
-                                            <MenuItem value="In Progress">In Progress</MenuItem>
-                                            <MenuItem value="Completed">Completed</MenuItem>
-                                            <MenuItem value="Pending Input">Pending Input</MenuItem>
-                                            <MenuItem value="Deferred">Deferred</MenuItem>
+                                            <MenuItem value="Note Started">No Iniciado</MenuItem>
+                                            <MenuItem value="In Progress">En Progreso</MenuItem>
+                                            <MenuItem value="Completed">Completado</MenuItem>
+                                            <MenuItem value="Pending Input">Pendiente de Entrada</MenuItem>
+                                            <MenuItem value="Deferred">Diferido</MenuItem>
                                         </Select>
                                         <FormHelperText
                                             error={
@@ -210,7 +210,7 @@ const AddEvent = ({ open, handleClose, setUserAction, _id }) => {
                                     </FormControl>
                                 </Grid>
                                 <Grid item xs={12} sm={4}>
-                                    <FormLabel>Priority</FormLabel>
+                                    <FormLabel>Prioridad</FormLabel>
                                     <FormControl fullWidth>
                                         <Select
                                             labelId="demo-simple-select-label"
@@ -222,9 +222,9 @@ const AddEvent = ({ open, handleClose, setUserAction, _id }) => {
                                             onChange={formik.handleChange}
                                             error={formik.touched.priority && Boolean(formik.errors.priority)}
                                         >
-                                            <MenuItem value="High">High</MenuItem>
-                                            <MenuItem value="Medium">Medium</MenuItem>
-                                            <MenuItem value="Low">Low</MenuItem>
+                                            <MenuItem value="High">Alta</MenuItem>
+                                            <MenuItem value="Medium">Media</MenuItem>
+                                            <MenuItem value="Low">Baja</MenuItem>
                                         </Select>
                                         <FormHelperText
                                             error={
@@ -236,7 +236,7 @@ const AddEvent = ({ open, handleClose, setUserAction, _id }) => {
                                     </FormControl>
                                 </Grid>
                                 <Grid item xs={12} sm={6} md={4}>
-                                    <FormLabel id="demo-row-radio-buttons-group-label">Assign To</FormLabel>
+                                    <FormLabel id="demo-row-radio-buttons-group-label">Asignar A</FormLabel>
                                     <FormControl fullWidth>
                                         <Select
                                             labelId="demo-simple-select-label"
@@ -278,7 +278,7 @@ const AddEvent = ({ open, handleClose, setUserAction, _id }) => {
                                 {
                                     formik.values.relatedTo === "Lead" &&
                                     <Grid item xs={12} sm={12} md={12}>
-                                        <FormLabel id="demo-row-radio-buttons-group-label">Related To Lead</FormLabel>
+                                        <FormLabel id="demo-row-radio-buttons-group-label">Relacionado Con Lead</FormLabel>
                                         <FormControl fullWidth>
                                             <Autocomplete
                                                 id="lead-autocomplete"
@@ -304,7 +304,7 @@ const AddEvent = ({ open, handleClose, setUserAction, _id }) => {
                                 {
                                     formik.values.relatedTo === "Contact" &&
                                     <Grid item xs={12} sm={12} md={12}>
-                                        <FormLabel id="demo-row-radio-buttons-group-label">Related To Contact</FormLabel>
+                                        <FormLabel id="demo-row-radio-buttons-group-label">Relacionado Con Contacto</FormLabel>
                                         <FormControl fullWidth>
                                             <Autocomplete
                                                 id="contact-autocomplete"
@@ -329,7 +329,7 @@ const AddEvent = ({ open, handleClose, setUserAction, _id }) => {
                                 }
 
                                 <Grid item xs={12} sm={6} md={6}>
-                                    <FormLabel>Start Date</FormLabel>
+                                    <FormLabel>Fecha de Inicio</FormLabel>
                                     <TextField
                                         name='startDate'
                                         type={'datetime-local'}
@@ -342,7 +342,7 @@ const AddEvent = ({ open, handleClose, setUserAction, _id }) => {
                                     />
                                 </Grid>
                                 <Grid item xs={12} sm={6} md={6}>
-                                    <FormLabel>End Date</FormLabel>
+                                    <FormLabel>Fecha de Fin</FormLabel>
                                     <TextField
                                         name='endDate'
                                         type={'datetime-local'}

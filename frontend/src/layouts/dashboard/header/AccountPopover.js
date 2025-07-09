@@ -7,6 +7,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import Jwt from 'jwt-decode';
 import { toast } from 'react-toastify';
 import account from '../../../_mock/account';
+import { constant } from '../../../constant';
 // ----------------------------------------------------------------------
 
 export default function AccountPopover() {
@@ -83,7 +84,7 @@ export default function AccountPopover() {
           }),
         }}
       >
-        <Avatar src={account.photoURL} alt="photoURL" />
+        <Avatar src={user?.photoURL ? `${constant.baseUrl}${user.photoURL}` : account.photoURL} alt="photoURL" />
       </IconButton>
 
       <Popover

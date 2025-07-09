@@ -51,12 +51,19 @@ export const apipost = async (path, data) => {
         return response;
     } catch (error) {
         if (error && error.response) {
-            if (error && error.response.data && error.response.status === 401) {
-                if (error.response.data.message) {
-                    toast.error(error.response.data.message)
-                }
+            if (error && error.response.data && error.response.data.message) {
+                toast.error(error.response.data.message)
+            } else if (error.response.status === 401) {
+                toast.error('Credenciales inválidas')
+            } else if (error.response.status === 400) {
+                toast.error('Error en los datos proporcionados')
+            } else {
+                toast.error('Error al conectar con el servidor')
             }
+        } else {
+            toast.error('Error de conexión')
         }
+        throw error;
     }
 }
 

@@ -176,9 +176,9 @@ const View = () => {
                 <Box sx={{ width: '100%' }}>
                     <Box sx={{ borderBottom: 1, borderColor: 'divider', marginBottom: "0px" }}>
                         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-                            <Tab label="OVERVIEW" {...a11yProps(0)} />
-                            <Tab label="MORE INFORMATION" {...a11yProps(1)} />
-                            <Tab label="OTHER" {...a11yProps(2)} />
+                            <Tab label="RESUMEN" {...a11yProps(0)} />
+                            <Tab label="MÁS INFORMACIÓN" {...a11yProps(1)} />
+                            <Tab label="OTROS" {...a11yProps(2)} />
                         </Tabs>
                     </Box>
                     <CustomTabPanel value={value} index={0}>

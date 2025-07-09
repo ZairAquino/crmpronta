@@ -26,7 +26,7 @@ const StyledSection = styled('div')(({ theme }) => ({
   flexDirection: 'column',
   justifyContent: 'center',
   boxShadow: theme.customShadows.card,
-  backgroundColor: theme.palette.background.default,
+  background: `linear-gradient(135deg, ${theme.palette.primary.lighter} 0%, ${theme.palette.secondary.lighter} 100%)`,
 }));
 
 const StyledContent = styled('div')(({ theme }) => ({
@@ -67,13 +67,13 @@ export default function RegisterPage() {
 
         <Container maxWidth="sm">
           <StyledContent>
-            <Typography variant="h4" gutterBottom>
-              Sign up to Minimal
+            <Typography variant="h4" gutterBottom sx={{ color: 'primary.main', fontWeight: 'bold' }}>
+              Registrarse en SureCRM
             </Typography>
 
             <Typography variant="body2" sx={{ mb: 5 }}>
-              Do have an account? 
-              <Link to="/login">Sign In</Link>
+              ¿Ya tienes cuenta? 
+              <Link to="/login" style={{ color: '#805AD5', textDecoration: 'none', fontWeight: 'bold' }}>Iniciar Sesión</Link>
             </Typography>
 
             {/* <Stack direction="row" spacing={2}>

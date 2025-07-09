@@ -81,7 +81,7 @@ const View = () => {
                     <Stack direction="row" alignItems="center" mb={3} justifyContent={"space-between"} width={"100%"}>
                         <Header
                             title={`${userDetails?.firstName} ${userDetails?.lastName}`}
-                            subtitle="Profile Details"
+                            subtitle="Detalles del Perfil"
                         />
                         <Stack direction="row" alignItems="center" justifyContent={"flex-end"} spacing={2}>
                             {/* Action Butoon */}
@@ -106,12 +106,12 @@ const View = () => {
                 <Box sx={{ width: '100%' }}>
                     <Box sx={{ borderBottom: 1, borderColor: 'divider', marginBottom: "0px" }}>
                         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-                            <Tab label="OVERVIEW" {...a11yProps(0)} />
-                            <Tab label="OTHER" {...a11yProps(1)} />
+                            <Tab label="RESUMEN" {...a11yProps(0)} />
+                            <Tab label="OTROS" {...a11yProps(1)} />
                         </Tabs>
                     </Box>
                     <CustomTabPanel value={value} index={0}>
-                        <Overview data={userDetails}/>
+                        <Overview data={userDetails} onUpdatePhoto={fetchdata}/>
                     </CustomTabPanel>
                     <CustomTabPanel value={value} index={1}>
                         <Other data={userDetails} />

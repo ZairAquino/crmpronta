@@ -24,23 +24,25 @@ export default function LoginForm() {
 
   // -----------  validationSchema
   const validationSchema = yup.object({
-    emailAddress: yup.string().email('Invalid email').required("Email is required"),
-    password: yup.string().required("Password is required"),
+    emailAddress: yup.string().email('Email inválido').required("El email es requerido"),
+    password: yup.string().required("La contraseña es requerida"),
 
   });
 
   const Adddata = async (values) => {
     setIsLogin(true)
     const data = values
-    const result = await apipost('user/login', data)
+    try {
+      const result = await apipost('user/login', data)
 
-    if (result && result.status === 200) {
-      localStorage.setItem('user', JSON.stringify(result?.data?.user))
-      localStorage.setItem('user_id', result?.data?.user?._id)
-      localStorage.setItem('userRole', result?.data?.user?.role)
-      navigate('/dashboard/app')
-    } else {
-      navigate('/login')
+      if (result && result.status === 200) {
+        localStorage.setItem('user', JSON.stringify(result?.data?.user))
+        localStorage.setItem('user_id', result?.data?.user?._id)
+        localStorage.setItem('userRole', result?.data?.user?.role)
+        navigate('/dashboard/app')
+      }
+    } catch (error) {
+      console.error('Login error:', error)
     }
 
     setIsLogin(false)
@@ -76,7 +78,7 @@ export default function LoginForm() {
 
           <TextField
             name="password"
-            label="Password"
+            label="Contraseña"
             type={showPassword ? 'text' : 'password'}
             value={formik.values.password}
             onChange={formik.handleChange}
@@ -99,7 +101,7 @@ export default function LoginForm() {
           />
         </Stack>
         <LoadingButton fullWidth size="large" type="submit" variant="contained" disabled={!!isLoading}>
-          {isLoading ? <CircularProgress /> : 'Login'}
+          {isLoading ? <CircularProgress /> : 'Iniciar Sesión'}
         </LoadingButton>
       </form>
     </>

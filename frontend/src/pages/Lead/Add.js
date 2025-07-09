@@ -26,19 +26,19 @@ const Add = (props) => {
 
   // -----------  validationSchema
   const validationSchema = yup.object({
-    title: yup.string().required("Title is required"),
-    firstName: yup.string().required("First Name is required"),
-    lastName: yup.string().required("Last Name is required"),
-    dateOfBirth: yup.date().required("Date of Birth is required"),
-    gender: yup.string().required("Gender is required"),
-    phoneNumber: yup.string().matches(/^[0-9]{10}$/, 'Phone number is invalid').required('Phone number is required'),
-    emailAddress: yup.string().email('Invalid email').required("Email is required"),
-    address: yup.string().required("Address is required"),
+    title: yup.string().required("El título es requerido"),
+    firstName: yup.string().required("El nombre es requerido"),
+    lastName: yup.string().required("El apellido es requerido"),
+    dateOfBirth: yup.date().required("La fecha de nacimiento es requerida"),
+    gender: yup.string().required("El género es requerido"),
+    phoneNumber: yup.string().matches(/^[0-9]{10}$/, 'El número de teléfono es inválido').required('El número de teléfono es requerido'),
+    emailAddress: yup.string().email('Email inválido').required("El email es requerido"),
+    address: yup.string().required("La dirección es requerida"),
     desiredCoverageAmount: yup.number(),
     coverageAmount: yup.number(),
-    alternatePhoneNumber: yup.string().matches(/^[0-9]{10}$/, 'Phone number is invalid'),
-    additionalEmailAddress: yup.string().email('Invalid email'),
-    assigned_agent: yup.string().required("Assigned Agent is required")
+    alternatePhoneNumber: yup.string().matches(/^[0-9]{10}$/, 'El número de teléfono es inválido'),
+    additionalEmailAddress: yup.string().email('Email inválido'),
+    assigned_agent: yup.string().required("El agente asignado es requerido")
   });
 
   // -----------   initialValues
@@ -128,7 +128,7 @@ const Add = (props) => {
             // color: "white",
           }}
         >
-          <Typography variant="h6">Add New</Typography>
+          <Typography variant="h6">Agregar Nuevo</Typography>
           <Typography>
             <ClearIcon
               onClick={handleClose}
@@ -143,7 +143,7 @@ const Add = (props) => {
               tabIndex={-1}
             >
               <Typography style={{ marginBottom: "15px" }} variant="h6">
-                Basic Information
+                Información Básica
               </Typography>
               <Grid
                 container
@@ -152,7 +152,7 @@ const Add = (props) => {
               >
                 <Grid item xs={12} sm={4} md={4}>
                   <FormControl fullWidth>
-                    <FormLabel>Title</FormLabel>
+                    <FormLabel>Título</FormLabel>
                     <Select
                       labelId="demo-simple-select-label"
                       id="title"
@@ -180,7 +180,7 @@ const Add = (props) => {
                   </FormControl>
                 </Grid>
                 <Grid item xs={12} sm={4} md={4}>
-                  <FormLabel>First name</FormLabel>
+                  <FormLabel>Nombre</FormLabel>
                   <TextField
                     id="fristName"
                     name="firstName"
@@ -200,7 +200,7 @@ const Add = (props) => {
                   />
                 </Grid>
                 <Grid item xs={12} sm={4} md={4}>
-                  <FormLabel>Last name</FormLabel>
+                  <FormLabel>Apellido</FormLabel>
                   <TextField
                     id="lastName"
                     name="lastName"
@@ -214,7 +214,7 @@ const Add = (props) => {
                   />
                 </Grid>
                 <Grid item xs={12} sm={6} md={6}>
-                  <FormLabel>Date Of Birth</FormLabel>
+                  <FormLabel>Fecha de Nacimiento</FormLabel>
                   <TextField
                     name='dateOfBirth'
                     type='date'
@@ -227,7 +227,7 @@ const Add = (props) => {
                   />
                 </Grid>
                 <Grid item xs={12} sm={6} md={6}>
-                  <FormLabel>Phone number</FormLabel>
+                  <FormLabel>Número de teléfono</FormLabel>
                   <TextField
                     id="phoneNumber"
                     name="phoneNumber"
@@ -246,7 +246,7 @@ const Add = (props) => {
                   />
                 </Grid>
                 <Grid item xs={12}>
-                  <FormLabel>Email</FormLabel>
+                  <FormLabel>Correo electrónico</FormLabel>
                   <TextField
                     id="emailAddress"
                     name="emailAddress"
@@ -266,17 +266,17 @@ const Add = (props) => {
                 </Grid>
                 <Grid item xs={12} >
                   <FormControl fullWidth>
-                    <FormLabel>Gender</FormLabel>
+                    <FormLabel>Género</FormLabel>
                     <RadioGroup row name="gender" onChange={formik.handleChange} value={formik.values.gender}>
-                      <FormControlLabel value="Male" control={<Radio />} label="Male" />
-                      <FormControlLabel value="Female" control={<Radio />} label="Female" />
-                      <FormControlLabel value="Other" control={<Radio />} label="Other" />
+                                              <FormControlLabel value="Male" control={<Radio />} label="Masculino" />
+                        <FormControlLabel value="Female" control={<Radio />} label="Femenino" />
+                        <FormControlLabel value="Other" control={<Radio />} label="Otro" />
                     </RadioGroup>
                     <FormHelperText style={{ color: Palette.error.main }}>{formik.touched.gender && formik.errors.gender}</FormHelperText>
                   </FormControl>
                 </Grid>
                 <Grid item xs={12} sm={12} md={12}>
-                  <FormLabel>Address</FormLabel>
+                  <FormLabel>Dirección</FormLabel>
                   <TextField
                     id="address"
                     name="address"
@@ -310,7 +310,7 @@ const Add = (props) => {
               >
                 <Grid item xs={12} sm={12} md={12}>
                   <FormControl fullWidth>
-                    <FormLabel>Lead Source</FormLabel>
+                    <FormLabel>Fuente del Lead</FormLabel>
                     <Select
                       labelId="demo-simple-select-label"
                       id="leadSource"
@@ -358,7 +358,7 @@ const Add = (props) => {
               >
                 <Grid item xs={12} sm={4} md={4}>
                   <FormControl fullWidth>
-                    <FormLabel>Lead Status</FormLabel>
+                    <FormLabel>Estado del Lead</FormLabel>
                     <Select
                       labelId="demo-simple-select-label"
                       id="leadStatus"
@@ -388,7 +388,7 @@ const Add = (props) => {
 
                 <Grid item xs={12} sm={4} md={4}>
                   <FormControl fullWidth>
-                    <FormLabel>Assigned Agent</FormLabel>
+                    <FormLabel>Agente Asignado</FormLabel>
                     <Select
                       labelId="demo-simple-select-label"
                       id="assigned_agent"
@@ -429,7 +429,7 @@ const Add = (props) => {
                 </Grid>
                 <Grid item xs={12} sm={4} md={4}>
                   <FormControl fullWidth>
-                    <FormLabel>Lead score or rating</FormLabel>
+                    <FormLabel>Puntuación o calificación del lead</FormLabel>
                     <Typography display="flex">
                       <Rating name="leadScore" precision={0.1} onChange={(event, newValue) => formik.setFieldValue("leadScore", newValue)} />
                     </Typography>
@@ -448,7 +448,7 @@ const Add = (props) => {
                 columnSpacing={{ xs: 0, sm: 5, md: 4 }}
               >
                 <Grid item xs={12} sm={6} md={6}>
-                  <FormLabel>Alternate phone number</FormLabel>
+                  <FormLabel>Número de teléfono alternativo</FormLabel>
                   <TextField
                     id="alternatePhoneNumber"
                     name="alternatePhoneNumber"
@@ -467,7 +467,7 @@ const Add = (props) => {
                   />
                 </Grid>
                 <Grid item xs={12} sm={6} md={6}>
-                  <FormLabel>Additional email address</FormLabel>
+                  <FormLabel>Dirección de email adicional</FormLabel>
                   <TextField
                     id="additionalEmailAddress"
                     name="additionalEmailAddress"
@@ -486,7 +486,7 @@ const Add = (props) => {
                   />
                 </Grid>
                 <Grid item xs={12} sm={6} md={6}>
-                  <FormLabel>Instagram profile</FormLabel>
+                  <FormLabel>Perfil de Instagram</FormLabel>
                   <TextField
                     id="instagramProfile"
                     name="instagramProfile"
@@ -497,7 +497,7 @@ const Add = (props) => {
                   {formik.values.instagramProfile && <a href={`https://www.instagram.com/${formik.values.instagramProfile}`} target="_blank" rel="noreferrer">Link</a>}
                 </Grid>
                 <Grid item xs={12} sm={6} md={6}>
-                  <FormLabel>Twitter profile</FormLabel>
+                  <FormLabel>Perfil de Twitter</FormLabel>
                   <TextField
                     id="twitterProfile"
                     name="twitterProfile"
@@ -521,7 +521,7 @@ const Add = (props) => {
               >
                 <Grid item xs={12} sm={6} md={6}>
                   <FormControl fullWidth>
-                    <FormLabel>Type of insurance</FormLabel>
+                    <FormLabel>Tipo de seguro</FormLabel>
                     <Select
                       labelId="demo-simple-select-label"
                       id="typeOfInsurance"
@@ -542,7 +542,7 @@ const Add = (props) => {
                 </Grid>
                 <Grid item xs={12} sm={6} md={6}>
                   <FormControl fullWidth>
-                    <FormLabel>Desired coverage amount</FormLabel>
+                    <FormLabel>Cantidad de cobertura deseada</FormLabel>
                     <OutlinedInput
                       id="desiredCoverageAmount"
                       name="desiredCoverageAmount"
@@ -558,7 +558,7 @@ const Add = (props) => {
                   </FormControl>
                 </Grid>
                 <Grid item xs={12} sm={12} md={12}>
-                  <FormLabel>Specific policy features</FormLabel>
+                  <FormLabel>Características específicas de la póliza</FormLabel>
                   <TextField
                     id="specificPolicyFeatures"
                     name="specificPolicyFeatures"
@@ -584,7 +584,7 @@ const Add = (props) => {
               >
                 <Grid item xs={12} sm={12}>
                   <FormControl fullWidth>
-                    <FormLabel>Qualification Status</FormLabel>
+                    <FormLabel>Estado de Calificación</FormLabel>
                     <Select
                       labelId="demo-simple-select-label"
                       id="QualificationStatus"
@@ -614,7 +614,7 @@ const Add = (props) => {
               >
                 <Grid item xs={12} sm={6} md={6}>
                   <FormControl fullWidth>
-                    <FormLabel>Policy Type</FormLabel>
+                    <FormLabel>Tipo de Póliza</FormLabel>
                     <Select
                       labelId="demo-simple-select-label"
                       id="policyType"
@@ -634,7 +634,7 @@ const Add = (props) => {
                   </FormControl>
                 </Grid>
                 <Grid item xs={12} sm={6} md={6}>
-                  <FormLabel>Policy Number</FormLabel>
+                  <FormLabel>Número de Póliza</FormLabel>
                   <TextField
                     id="policyNumber"
                     name="policyNumber"
@@ -646,7 +646,7 @@ const Add = (props) => {
                   />
                 </Grid>
                 <Grid item xs={12} sm={6} md={6}>
-                  <FormLabel>Start Date</FormLabel>
+                  <FormLabel>Fecha de Inicio</FormLabel>
                   <TextField
                     id="startDate"
                     name="startDate"
@@ -658,7 +658,7 @@ const Add = (props) => {
                   />
                 </Grid>
                 <Grid item xs={12} sm={6} md={6}>
-                  <FormLabel>End Date</FormLabel>
+                  <FormLabel>Fecha de Fin</FormLabel>
                   <TextField
                     id="endDate"
                     name="endDate"
@@ -670,7 +670,7 @@ const Add = (props) => {
                   />
                 </Grid>
                 <Grid item xs={12} sm={6} md={6}>
-                  <FormLabel>Coverage Amount</FormLabel>
+                  <FormLabel>Cantidad de Cobertura</FormLabel>
                   <OutlinedInput
                     id="coverageAmount"
                     name="coverageAmount"
@@ -687,7 +687,7 @@ const Add = (props) => {
                 </Grid>
                 <Grid item xs={12} sm={6} md={6}>
                   <FormControl fullWidth>
-                    <FormLabel>Term Length</FormLabel>
+                    <FormLabel>Duración del Término</FormLabel>
                     <Select
                       labelId="demo-simple-select-label"
                       id="termLength"
@@ -709,7 +709,7 @@ const Add = (props) => {
                 </Grid>
                 <Grid item xs={12} sm={6} md={6}>
                   <FormControl fullWidth>
-                    <FormLabel>Conversion Reason</FormLabel>
+                    <FormLabel>Razón de Conversión</FormLabel>
                     <Select
                       labelId="demo-simple-select-label"
                       id="conversionReason"
@@ -729,7 +729,7 @@ const Add = (props) => {
                   </FormControl>
                 </Grid>
                 <Grid item xs={12} sm={6} md={6}>
-                  <FormLabel>Conversion Date&Time</FormLabel>
+                  <FormLabel>Fecha y Hora de Conversión</FormLabel>
                   <TextField
                     id=""
                     name="conversionDateTime"
@@ -754,7 +754,7 @@ const Add = (props) => {
               >
                 <Grid item xs={12} sm={6} md={6}>
                   <FormControl fullWidth>
-                    <FormLabel>Lead Category</FormLabel>
+                    <FormLabel>Categoría del Lead</FormLabel>
                     <Select
                       labelId="demo-simple-select-label"
                       id="leadCategory"
@@ -772,7 +772,7 @@ const Add = (props) => {
                 </Grid>
                 <Grid item xs={12} sm={6} md={6}>
                   <FormControl fullWidth>
-                    <FormLabel>Lead Priority</FormLabel>
+                    <FormLabel>Prioridad del Lead</FormLabel>
                     <Select
                       labelId="demo-simple-select-label"
                       id="leadPriority"
@@ -794,11 +794,11 @@ const Add = (props) => {
           </form>
         </DialogContent>
         <DialogActions>
-          <Button onClick={formik.handleSubmit} variant='contained' color='primary'>Save</Button>
+                      <Button onClick={formik.handleSubmit} variant='contained' color='primary'>Guardar</Button>
           <Button onClick={() => {
             formik.resetForm()
             handleClose()
-          }} variant='outlined' color='error'>Cancle</Button>
+                      }} variant='outlined' color='error'>Cancelar</Button>
         </DialogActions>
       </Dialog>
     </div>

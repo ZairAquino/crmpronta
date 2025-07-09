@@ -19,10 +19,10 @@ const Add = (props) => {
 
   // -----------  validationSchema
   const validationSchema = yup.object({
-    firstName: yup.string().required("Frist Name is required"),
-    lastName: yup.string().required("Last Name is required"),
-    emailAddress: yup.string().email('Invalid email').required("Email is required"),
-    password: yup.string().required("Password is required"),
+    firstName: yup.string().required("El nombre es requerido"),
+    lastName: yup.string().required("El apellido es requerido"),
+    emailAddress: yup.string().email('Email inválido').required("El email es requerido"),
+    password: yup.string().required("La contraseña es requerida"),
 
   });
 
@@ -68,7 +68,7 @@ const Add = (props) => {
             justifyContent: "space-between",
           }}
         >
-          <Typography variant="h6">Add New </Typography>
+          <Typography variant="h6">Agregar Nuevo </Typography>
           <Typography>
             <ClearIcon
               onClick={handleClose}
@@ -85,7 +85,7 @@ const Add = (props) => {
               columnSpacing={{ xs: 0, sm: 5, md: 4 }}
             >
               <Grid item xs={12} sm={12} md={12}>
-                <FormLabel>First name</FormLabel>
+                <FormLabel>Nombre</FormLabel>
                 <TextField
                   id="firstName"
                   name="firstName"
@@ -105,7 +105,7 @@ const Add = (props) => {
                 />
               </Grid>
               <Grid item xs={12} sm={12} md={12}>
-                <FormLabel>Last name</FormLabel>
+                <FormLabel>Apellido</FormLabel>
                 <TextField
                   id="lastName"
                   name="lastName"
@@ -142,7 +142,7 @@ const Add = (props) => {
                 />
               </Grid>
               <Grid item xs={12} sm={12} md={12}>
-                <FormLabel>Password</FormLabel>
+                <FormLabel>Contraseña</FormLabel>
                 <TextField
                   id="password"
                   name="password"
@@ -170,7 +170,7 @@ const Add = (props) => {
             onClick={formik.handleSubmit}
             style={{ textTransform: "capitalize" }}
           >
-            Save
+            Guardar
           </Button>
           <Button
             type="reset"
@@ -182,7 +182,7 @@ const Add = (props) => {
               handleClose()
             }}
           >
-            Cancle
+            Cancelar
           </Button>
         </DialogActions>
       </Dialog>

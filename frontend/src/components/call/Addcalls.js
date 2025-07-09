@@ -28,12 +28,12 @@ const Addcalls = (props) => {
 
     // -----------  validationSchema
     const validationSchema = yup.object({
-        subject: yup.string().required("Subject is required"),
-        status: yup.string().required("Status is required"),
-        startDateTime: yup.string().required("Start Date & Time is required"),
-        duration: yup.string().required("Duration is required"),
-        relatedTo: yup.string().required("Related To is required"),
-        note: yup.string().required("Note is required"),
+        subject: yup.string().required("El asunto es requerido"),
+        status: yup.string().required("El estado es requerido"),
+        startDateTime: yup.string().required("La fecha y hora de inicio es requerida"),
+        duration: yup.string().required("La duración es requerida"),
+        relatedTo: yup.string().required("Relacionado con es requerido"),
+        note: yup.string().required("La nota es requerida"),
 
     });
 
@@ -109,7 +109,7 @@ const Addcalls = (props) => {
 
                     }}
                 >
-                    <Typography variant="h6">Create Call </Typography>
+                    <Typography variant="h6">Crear Llamada </Typography>
                     <Typography>
                         <ClearIcon
                             onClick={handleClose}
@@ -130,7 +130,7 @@ const Addcalls = (props) => {
                                 columnSpacing={{ xs: 0, sm: 5, md: 4 }}
                             >
                                 <Grid item xs={12} sm={6} md={6}>
-                                    <FormLabel>Subject</FormLabel>
+                                    <FormLabel>Asunto</FormLabel>
                                     <TextField
                                         id="subject"
                                         name="subject"
@@ -149,7 +149,7 @@ const Addcalls = (props) => {
                                 </Grid>
                                 <Grid item xs={12} sm={6} md={6}>
                                     <FormControl fullWidth>
-                                        <FormLabel>Status</FormLabel>
+                                        <FormLabel>Estado</FormLabel>
                                         <Select
                                             labelId="demo-simple-select-label"
                                             id="status"
@@ -159,9 +159,9 @@ const Addcalls = (props) => {
                                             onChange={formik.handleChange}
                                             error={formik.touched.status && Boolean(formik.errors.status)}
                                         >
-                                            <MenuItem value="Planned">Planned</MenuItem>
-                                            <MenuItem value="Held">Held</MenuItem>
-                                            <MenuItem value="Not Held">Not Held</MenuItem>
+                                            <MenuItem value="Planned">Planificada</MenuItem>
+                                            <MenuItem value="Held">Realizada</MenuItem>
+                                            <MenuItem value="Not Held">No Realizada</MenuItem>
                                         </Select>
                                         <FormHelperText
                                             error={
@@ -173,7 +173,7 @@ const Addcalls = (props) => {
                                     </FormControl>
                                 </Grid>
                                 <Grid item xs={12} sm={6}>
-                                    <FormLabel>Start Date & Time</FormLabel>
+                                    <FormLabel>Fecha y Hora de Inicio</FormLabel>
                                     <TextField
                                         id="startDateTime"
                                         name="startDateTime"
@@ -193,7 +193,7 @@ const Addcalls = (props) => {
                                 </Grid>
                                 <Grid item xs={12} sm={6}>
                                     <FormControl fullWidth>
-                                        <FormLabel>Duration</FormLabel>
+                                        <FormLabel>Duración</FormLabel>
                                         <Select
                                             labelId="demo-simple-select-label"
                                             id="duration"
@@ -203,13 +203,13 @@ const Addcalls = (props) => {
                                             onChange={formik.handleChange}
                                             error={formik.touched.duration && Boolean(formik.errors.duration)}
                                         >
-                                            <MenuItem value="15 minutes">15 minutes</MenuItem>
-                                            <MenuItem value="30 minutes">30 minutes</MenuItem>
-                                            <MenuItem value="45 minutes">45 minutes</MenuItem>
-                                            <MenuItem value="1 hour">1 hour</MenuItem>
-                                            <MenuItem value="1.5 hours">1.5 hours</MenuItem>
-                                            <MenuItem value="2 hours">2 hours</MenuItem>
-                                            <MenuItem value="3 hours">3 hours</MenuItem>
+                                            <MenuItem value="15 minutes">15 minutos</MenuItem>
+                                            <MenuItem value="30 minutes">30 minutos</MenuItem>
+                                            <MenuItem value="45 minutes">45 minutos</MenuItem>
+                                            <MenuItem value="1 hour">1 hora</MenuItem>
+                                            <MenuItem value="1.5 hours">1.5 horas</MenuItem>
+                                            <MenuItem value="2 hours">2 horas</MenuItem>
+                                            <MenuItem value="3 hours">3 horas</MenuItem>
                                         </Select>
                                         <FormHelperText
                                             error={
@@ -222,7 +222,7 @@ const Addcalls = (props) => {
                                 </Grid>
                                 <Grid item xs={12} sm={6}>
                                     <FormControl fullWidth>
-                                        <FormLabel>Related To</FormLabel>
+                                        <FormLabel>Relacionado Con</FormLabel>
                                         <Select
                                             labelId="demo-simple-select-label"
                                             id="relatedTo"
@@ -270,7 +270,7 @@ const Addcalls = (props) => {
                                 {
                                     formik.values.relatedTo === "Contact" &&
                                     <Grid item xs={12} sm={6}>
-                                        <FormLabel>Contact</FormLabel>
+                                        <FormLabel>Contacto</FormLabel>
                                         <Autocomplete
                                             id="contact-autocomplete"
                                             options={contactData}
@@ -291,7 +291,7 @@ const Addcalls = (props) => {
                                     </Grid>
                                 }
                                 <Grid item xs={12} sm={12}>
-                                    <FormLabel>Note</FormLabel>
+                                    <FormLabel>Nota</FormLabel>
                                     <TextField
                                         id="note"
                                         name="note"
@@ -322,7 +322,7 @@ const Addcalls = (props) => {
                         style={{ textTransform: "capitalize" }}
                         color="secondary"
                     >
-                        Save
+                        Guardar
                     </Button>
                     <Button
                         type="reset"
@@ -334,7 +334,7 @@ const Addcalls = (props) => {
                         }}
                         color="error"
                     >
-                        Cancle
+                        Cancelar
                     </Button>
                 </DialogActions>
             </Dialog>

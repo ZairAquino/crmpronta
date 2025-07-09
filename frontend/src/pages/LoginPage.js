@@ -23,7 +23,7 @@ const StyledSection = styled('div')(({ theme }) => ({
   flexDirection: 'column',
   justifyContent: 'center',
   boxShadow: theme.customShadows.card,
-  backgroundColor: theme.palette.background.default,
+  background: `linear-gradient(135deg, ${theme.palette.primary.lighter} 0%, ${theme.palette.secondary.lighter} 100%)`,
 }));
 
 const StyledContent = styled('div')(({ theme }) => ({
@@ -58,18 +58,18 @@ export default function LoginPage() {
 
         {mdUp && (
           <StyledSection>
-            <Typography variant="h3" sx={{ px: 5, mt: 10, mb: 5 }}>
-              Hi, Welcome Back
+            <Typography variant="h3" sx={{ px: 5, mt: 10, mb: 5, color: 'primary.dark', fontWeight: 'bold' }}>
+              Hola, Bienvenido de Vuelta
             </Typography>
-            <img src="/assets/illustrations/illustration_login.png" alt="login" />
+            <img src="/assets/images/20250708_1829_Perro y Escudo 3D_remix_01jzp99w45empa03ph9sk0p4hx.png" alt="login" />
           </StyledSection>
         )}
 
         <Container maxWidth="sm">
           <StyledContent>
-          <img src="/assets/logo prolink.png" width={250} style={{marginLeft:"-7px"}}/>
-            <Typography variant="h4" gutterBottom mb={4}>
-              Sign in to SureCRM
+          <img src="/assets/images/Diseño sin título-5.png" width={250} style={{marginLeft:"-7px"}}/>
+            <Typography variant="h4" gutterBottom mb={4} sx={{ color: 'primary.main', fontWeight: 'bold' }}>
+              Iniciar Sesión en Pronta
             </Typography>
 
             
@@ -96,6 +96,20 @@ export default function LoginPage() {
 
             <LoginForm />
           </StyledContent>
+          
+          <img 
+            src="/assets/images/by-2.png" 
+            alt="Made by" 
+            style={{
+              position: 'fixed',
+              bottom: '20px',
+              right: '20px',
+              width: '80px',
+              height: 'auto',
+              opacity: 0.7,
+              zIndex: 1000
+            }}
+          />
         </Container>
       </StyledRoot>
     </>
