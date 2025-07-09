@@ -4,6 +4,7 @@
   "licence": "MIT",
   "version": "1.7.0",
   "private": false,
+  "homepage": "https://zairaquino.github.io/crmpronta/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -13,7 +14,9 @@
     "lint:fix": "eslint --fix --ext .js,.jsx ./src",
     "clear-all": "rm -rf build node_modules",
     "re-start": "rm -rf build node_modules && yarn install && yarn start",
-    "re-build": "rm -rf build node_modules && yarn install && yarn build"
+    "re-build": "rm -rf build node_modules && yarn install && yarn build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -61,6 +64,7 @@
     "dayjs": "^1.11.9",
     "file-saver": "^2.0.5",
     "formik": "^2.4.2",
+    "gh-pages": "^6.3.0",
     "history": "^5.3.0",
     "jsonwebtoken": "^9.0.1",
     "jwt-decode": "^3.1.2",
