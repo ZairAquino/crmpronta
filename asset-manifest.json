@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/crmpronta/static/css/main.1aa1b982.css",
+    "main.js": "/crmpronta/static/js/main.f87d6be4.js",
+    "static/js/488.e4af5582.chunk.js": "/crmpronta/static/js/488.e4af5582.chunk.js",
+    "index.html": "/crmpronta/index.html",
+    "main.1aa1b982.css.map": "/crmpronta/static/css/main.1aa1b982.css.map",
+    "main.f87d6be4.js.map": "/crmpronta/static/js/main.f87d6be4.js.map",
+    "488.e4af5582.chunk.js.map": "/crmpronta/static/js/488.e4af5582.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1aa1b982.css",
+    "static/js/main.f87d6be4.js"
+  ]
+}
