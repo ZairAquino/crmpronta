@@ -67,7 +67,7 @@ export default function LoginPage() {
 
         <Container maxWidth="sm">
           <StyledContent>
-          <img src="/assets/images/Diseño sin título-5.png" width={250} style={{marginLeft:"-7px"}}/>
+          <img src="/assets/images/Diseño sin título-5.png" width={250} style={{marginLeft:"-7px"}} alt="Logo"/>
             <Typography variant="h4" gutterBottom mb={4} sx={{ color: 'primary.main', fontWeight: 'bold' }}>
               Iniciar Sesión en Pronta
             </Typography>

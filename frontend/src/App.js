@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 import React, {  } from 'react';
-import { Navigate, Route, Routes, useNavigate } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 // routes
 import { ToastContainer } from 'react-toastify';
 import Routers from './routes';
@@ -22,7 +22,6 @@ export default function App() {
 
   // eslint-disable-next-line react-hooks/exhaustive-deps, prefer-const
  const user = JSON.parse(localStorage.getItem('user'))
-  useNavigate()
 
   return (
     <ThemeProvider>

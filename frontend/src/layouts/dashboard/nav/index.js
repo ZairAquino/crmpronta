@@ -67,7 +67,7 @@ const navigate = useNavigate()
           background: 'linear-gradient(135deg, rgba(232, 213, 255, 0.2) 0%, rgba(254, 215, 226, 0.2) 100%)',
         }
       }} onClick={home}>
-        <img src="/assets/images/Diseño sin título-5.png" width={150}  />
+        <img src="/assets/images/Diseño sin título-5.png" width={150} alt="Logo" />
       </Box>
 
       {/* <Box sx={{ mb: 5, mx: 2.5 }}> */}
