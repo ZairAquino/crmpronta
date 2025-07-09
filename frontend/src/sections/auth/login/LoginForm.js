@@ -43,9 +43,10 @@ export default function LoginForm() {
       }
     } catch (error) {
       console.error('Login error:', error)
+      // El error ya se maneja en la función apipost con toast
+    } finally {
+      setIsLogin(false)
     }
-
-    setIsLogin(false)
   }
 
   // formik
